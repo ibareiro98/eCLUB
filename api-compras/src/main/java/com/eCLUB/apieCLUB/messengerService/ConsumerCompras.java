@@ -12,13 +12,13 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class Consumer {
+public class ConsumerCompras {
 
     @SuppressWarnings("unused")
     private final ProductosRep productosRep;
 
     @Autowired
-    public Consumer(ProductosRep productosRep) {
+    public ConsumerCompras(ProductosRep productosRep) {
         this.productosRep = productosRep;
     }
 
@@ -45,7 +45,7 @@ public class Consumer {
         try {
             Productos currentProducto = productosService.findById(idProducto);
             Long stockActual = currentProducto.getStock();
-            Long nuevoStock = stockActual - cantidad;
+            Long nuevoStock = stockActual + cantidad;
             currentProducto.setStock(nuevoStock);
             productosService.save(currentProducto);
         } catch (Exception e) {

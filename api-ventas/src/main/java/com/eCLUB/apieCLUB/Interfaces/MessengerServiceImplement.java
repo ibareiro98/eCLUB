@@ -12,6 +12,6 @@ public class MessengerServiceImplement implements MessengerService{
 	
 	public void sendToRabbit(String message) {	
         log.info("Message '{}' will be send ... ", message);
-		this.publisher.send(message);
+		this.publisher.sendVentas(message);
 	}
 }

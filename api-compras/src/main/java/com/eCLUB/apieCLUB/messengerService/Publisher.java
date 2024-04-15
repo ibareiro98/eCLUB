@@ -16,7 +16,7 @@ public class Publisher {
      @Autowired
      private Queue queue;
      
-     public void send(Object message) {
+     public void sendCompras(Object message) {
          rabbitTemplate.convertAndSend(queue.getName(), message);
      }
      
